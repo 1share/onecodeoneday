@@ -21,19 +21,6 @@ int run(int (*m)[R+1], int i, int j)
 
 	int p,q;
 
-	/*
-		{0,0,1,0,0,0,1,0},
-                {0,0,1,0,0,0,1,0},
-                {0,0,0,0,1,1,0,1},
-                {0,1,1,1,0,0,1,0},
-                {0,0,0,1,0,0,0,0},
-                {0,1,0,0,0,1,0,1},
-                {0,1,1,1,1,0,0,1},
-                {1,1,0,0,1,1,0,1},
-                {1,1,0,0,1,1,0,0},
-                {1,1,0,0,0,0,1,0}
-	*/
-
 	do{
 		pos = s.top();
 		p = pos.first;
@@ -61,6 +48,7 @@ int run(int (*m)[R+1], int i, int j)
                         m[p][q]=2;
 		} else {
 			s.pop();
+                        m[p][q]=1;
 		}
 
 	} while(s.top().first != D || s.top().second != R);
@@ -69,6 +57,18 @@ int run(int (*m)[R+1], int i, int j)
 		pos = s.top();
 		cout<<"x:"<<pos.first<<" y:"<<pos.second<<endl;
 		s.pop();
+	}
+
+	for (i=0;i<D+1;i++) {
+		for(j=0;j<R+1;j++) {
+			if(m[i][j]==2)
+				cout<<"$";
+			if(m[i][j]==1)
+				cout<<"#";
+			if(m[i][j]==0)
+				cout<<" ";
+		}
+		cout<<endl;
 	}
 
 
