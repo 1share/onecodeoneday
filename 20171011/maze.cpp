@@ -48,7 +48,7 @@ int run(int (*m)[R+1], int i, int j)
                         m[p][q]=2;
 		} else {
 			s.pop();
-                        m[p][q]=1;
+                        m[p][q]=3;
 		}
 
 	} while(s.top().first != D || s.top().second != R);
@@ -65,7 +65,7 @@ int run(int (*m)[R+1], int i, int j)
 				cout<<"$";
 			if(m[i][j]==1)
 				cout<<"#";
-			if(m[i][j]==0)
+			if(m[i][j]==0 || m[i][j]==3)
 				cout<<" ";
 		}
 		cout<<endl;
