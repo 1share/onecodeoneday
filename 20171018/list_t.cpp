@@ -32,7 +32,8 @@ void list_ops() {
 	list_init(l1, 0);
 	list_init(l2, 1);
 
-	l.assign(l1.begin(),l1.end());
+	l = l1;
+	//l.assign(l1.begin(),l1.end());
 	//l.assign(l2.begin(),l2.end());
 
 	cout<<"-----------------------"<<endl;
