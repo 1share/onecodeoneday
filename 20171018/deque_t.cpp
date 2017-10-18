@@ -18,9 +18,17 @@ static void deque_init(deque<int> &q, int flag) {
 }
 
 static void print_deque(deque<int> &q, string str, int flag) {
+	for(int i=0; i<q.size(); i++) {
+		cout<<"print:"<<q.at(i)<<endl;
+	}
+
+
 	cout<<"-----------------------"<<endl;
 	cout<<q.size()<<endl;
 	cout<<"-----------------------"<<endl;
+
+	q.erase(q.begin()+2);	
+
 	if(flag==0) {
 		while(!q.empty()){
 			cout<<str<<" front:"<<q.front()<<endl;
@@ -49,7 +57,11 @@ void deque_ops() {
 	print_deque(q, "deque:", 0);
 
 	q.push_back(9);
-	print_deque(q, "after push back:", 0);
+	cout<<"-----------------------"<<endl;
+	cout<<q.size()<<endl;
+	q.clear();
+	cout<<"-----------------------"<<endl;
+	cout<<q.size()<<endl;
 
 	deque_init(q2, 1);
 	q=q2;
@@ -60,7 +72,11 @@ void deque_ops() {
 	print_deque(q, "deque:", 1);
 
 	q.push_front(9);
-	print_deque(q, "after push front:", 1);
+	cout<<"-----------------------"<<endl;
+	cout<<q.size()<<endl;
+	q.clear();
+	cout<<"-----------------------"<<endl;
+	cout<<q.size()<<endl;
 	
 }
 
