@@ -48,7 +48,7 @@ private:
 };
 
 
-int main() {
+void time_ops() {
 	class Time t, t1(1,2,3), t2;
 	int hh = 22, mm= 30, ss= 15;
 	t.SetTime_h(hh);
@@ -59,7 +59,6 @@ int main() {
 	t1.Show();
 	t2.Show();
 
-	return 0;
 }
 
 
