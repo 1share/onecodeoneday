@@ -53,6 +53,15 @@ mystring &mystring::operator=(const char *str) {
 	return *this;
 }
 
+mystring &mystring::operator=(const string &str) {
+	delete mstr;
+	mlen = str.length();
+        mstr = new char[mlen+1];
+        strcpy(mstr, str.c_str());
+
+	return *this;
+}
+
 char &mystring::operator[](int i) {	
 	return mstr[i];
 }
@@ -80,6 +89,12 @@ ostream & operator<<(ostream &os, const mystring &str) {
 }
 
 istream & operator>>(istream &is, mystring &str) {
-	
+	char t[1024];	
+	is.get(t,1024);
+
+	if(is)
+		str = t;
+
+	return is;
 
 }

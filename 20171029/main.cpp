@@ -4,11 +4,22 @@
 #include "mystring.h"
 
 int main() {
-	class mystring name;
+	mystring name;
 	string s("abcd1234");
-	//name = s;
+	const char *str = "ABCD1234";
+	mystring k(str);
+  	cout<<"k:"<<k<<" index=3:"<<k[3]<<endl;
 
-	cout<<"name:"<<endl;
+  	name = s;
+  	cout<<"name:"<<name<<endl;
+	
+	cout<<(k==name)<<(k>name)<<(k<name)<<endl;
+
+  	name = str;
+  	cout<<"name:"<<name<<endl;
+
+	cin>>name;
+	cout<<"name:"<<name<<endl;
 
 	return 0;
 }
