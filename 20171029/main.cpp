@@ -21,5 +21,9 @@ int main() {
 	cin>>name;
 	cout<<"name:"<<name<<endl;
 
+	mystring n;
+	n = name;
+	cout<<"n:"<<n<<endl;
+
 	return 0;
 }
