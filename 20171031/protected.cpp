@@ -44,7 +44,7 @@ int main() {
 	B itemb(100);
 	itemb.fun();
 	itemb.a1=10;
-	//temb.a2=20;
+	//itemb.a2=20;
 	//itemb.a3=30;
 	itemb.fun();
 

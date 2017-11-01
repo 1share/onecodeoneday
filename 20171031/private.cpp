@@ -25,7 +25,7 @@ private:
 	int a3;
 };
 
-class B : public A {
+class B : private A {
 public:
 	int a1;
 	B(int v) {
