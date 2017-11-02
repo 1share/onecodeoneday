@@ -37,8 +37,13 @@ public:
 	virtual ~sheet();
 
 	sheet &operator=(sheet &data);
+	void setCell(int x, int y, const cell &cell);
+	cell getCell(int x, int y);
 	
 protected:
+	bool inRange(int value, int upper);
+	void copyFrom(const sheet &data);
+	cell *mcell;
 	int mw,mh;
 };
 
