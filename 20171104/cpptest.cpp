@@ -1,16 +1,17 @@
 #include<iostream>
-#include "clock.h"
+#include<iomanip>
+#include "mclock.h"
 
 using namespace std;
 
 int main() {
-	clock mclock;
+	mclock clock;
 	int h,m;
 
 	while(cin>>h>>m) {
 		if(h<0 || m<0) break;
-		mclock.seth(h).setm(h).getA();
-		mclock.show();
+		clock.seth(h).setm(m).getA();
+		clock.show();
 	}	
 
 	return 0;

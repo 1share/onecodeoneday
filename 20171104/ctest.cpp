@@ -3,8 +3,6 @@
 
 using namespace std;
 
-double getA(int h, int m);
-
 double getA(int h,int m)
 {
         return ((h*30+m/60.0*30) - m*6);
