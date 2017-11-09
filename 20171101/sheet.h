@@ -3,7 +3,7 @@ using namespace std;
 
 class cell {
 public:
-	cell() {};
+	cell();
 	cell(string s);
 	cell(double v);
 	cell(const cell &data);
@@ -20,7 +20,7 @@ public:
 
 protected:
 	double mvalue;
-	string ms;
+	string mstr;
 	double string2double(const string s);
 	string double2string(double value);
 };
