@@ -31,19 +31,19 @@ public:
   	static const int default_width = 100;
   	static const int default_high = 100;
 
-	sheet(int w, int h) {};
-	sheet(sheet &data) {};
+	sheet(int w, int h);
+	sheet(const sheet &data);
 
 	virtual ~sheet();
 
-	sheet &operator=(sheet &data);
+	sheet &operator=(const sheet &data);
 	void setCell(int x, int y, const cell &cell);
-	cell getCell(int x, int y);
+	cell &getCell(int x, int y);
 	
 protected:
 	bool inRange(int value, int upper);
 	void copyFrom(const sheet &data);
-	cell *mcell;
+	cell **mcell;
 	int mw,mh;
 };
 

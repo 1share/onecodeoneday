@@ -71,7 +71,7 @@ cell &cell::operator+(const cell &data) {
 }
 
 
-sheet::sheet(int w, int h):mw(w>default_width?default_width:w),mh(mh>default_high?default_high:high) {
+sheet::sheet(int w, int h):mw(w>default_width?default_width:w),mh(mh>default_high?default_high:mh) {
 	mcell = new cell*[mw];
 
 	for(int i=0;i<mw;i++) {
@@ -90,9 +90,9 @@ sheet::sheet(const sheet &data) {
 	mw = data.mw;
 	mh = data.mh;
 
-	mcell = new cell*[mw]
+	mcell = new cell*[mw];
 	for(int i=0;i<mw;i++) {
-		mcell[i]=new cell[mh];
+		mcell[i]=new cell [mh];
 	}
 
 	for(int i=0;i<mw;i++) {
@@ -103,7 +103,7 @@ sheet::sheet(const sheet &data) {
 }
 
 sheet &sheet::operator=(const sheet &data) {
-	if(*this = data) {
+	if(this == &data) {
 		return *this;
 	}
 
@@ -115,9 +115,9 @@ sheet &sheet::operator=(const sheet &data) {
 	mw = data.mw;
 	mh = data.mh;
 
-        mcell = new cell*[mw]
+        mcell = new cell*[mw];
         for(int i=0;i<mw;i++) {
-                mcell[i]=new cell[mh];
+                mcell[i]=new cell [mh];
         }
 
         for(int i=0;i<mw;i++) {
@@ -129,27 +129,27 @@ sheet &sheet::operator=(const sheet &data) {
 	return *this;
 }
 
-void sheet::setCell(int x, int y, const sheet &cell) {
+void sheet::setCell(int x, int y, const cell &cell) {
 	if(!inRange(x, mw) || !inRange(y, mh)) {
 		cout<<"parm error"<<endl;
-		return cell;
+		return;
 	}
 	
 	mcell[x][y] = cell;
 }
 
-sheet &sheet::getCell(int x, int y) {
-	sheet cell;
+cell &sheet::getCell(int x, int y) {
+	cell cell;
 	if(!inRange(x, mw) || !inRange(y, mh)) {
 		cout<<"parm error"<<endl;
-		return cell;
+		return mcell[0][0];
 	}
 
 	return mcell[x][y];
 }
 
 
-boot sheet::inRange(int value, int upper) {
+bool sheet::inRange(int value, int upper) {
 	if(value<0 || value > upper)
 		return false;
 
@@ -161,7 +161,7 @@ int main() {
 
 	sheet md(3,4);
 	md.setCell(2,2,6);
-	cout<<md.getCell(2,2),getDoubleValue()<<endl;
+	cout<<md.getCell(2,2).getDoubleValue()<<endl;
 
   	return 0;
 }
