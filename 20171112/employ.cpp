@@ -53,7 +53,7 @@ const long &employ::getSalary() const {
 }
 
 void employ::showEmployInfo() const{
-	cout<<"FirstName"<<getFirstName()<<endl;
+	cout<<"FirstName:"<<getFirstName()<<endl;
 	cout<<"SencondName:"<<getSecondName()<<endl;
 	cout<<"Number:"<<getNumber()<<endl;
 	cout<<"Salary:"<<getSalary()<<endl;
@@ -71,5 +71,17 @@ int main() {
 	cin>>salary;
 	
 	myep.setFirstName(s1).setSecondName(s2).setNumber(number).setSalary(salary).showEmployInfo();
+
+
+	manager myma;
+
+	string ss1,ss2;
+	long snumber, ssalary;
+
+	cin>>ss1>>ss2;
+	cin>>snumber;
+	cin>>ssalary;
+	
+	myma.setFirstName(ss1).setSecondName(ss2).setNumber(snumber).setSalary(ssalary).showEmployInfo();
 
 }

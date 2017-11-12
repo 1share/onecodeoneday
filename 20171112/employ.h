@@ -11,7 +11,7 @@ public:
 	employ &setFirstName(const string fname);
 	employ &setSecondName(const string sname);
 	employ &setNumber(const long number);
-	virtual employ&setSalary(const long salary);
+	virtual employ &setSalary(const long salary);
 
 	const string &getFirstName() const;
 	const string &getSecondName() const;
@@ -30,24 +30,15 @@ private:
 	long msalary;
 };
 
+class manager : public employ {
+public:
+	manager() {};
+	~manager() {};
 
+	employ &setSalary(const long salary) {
+		employ::setSalary(10 * salary);
+		
+		return *this;
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+};
