@@ -11,6 +11,13 @@ int main() {
 	person.set_email("jdoe@example.com");
 	fstream output("myfile",ios::out|ios::binary);
 	person.SerializeToOstream(&output);
+	output.close();
 
+	//Person person;
+	fstream input("myfile",ios::in | ios::binary);
+	person.ParseFromIstream(&input);
+	cout << "Name: " << person.name() << endl;
+	cout << "E-mail: " << person.email() << endl;
+	input.close();
 
 }
