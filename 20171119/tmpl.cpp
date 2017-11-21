@@ -79,13 +79,18 @@ T &game<T>::getCell(int x, int y){
 
 int main() {
 	game<cell> mygame(10,10);
-	mygame.setCell(5,3,10.1);
-	cout<<mygame.getCell(5,3)<<endl;
+	cell c("8.2");
+	mygame.setCell(5,3,c);
+	cout<<mygame.getCell(5,3).getDoubleValue()<<endl;
 
+	game<int> mygame1(10,10);
+	mygame1.setCell(5,3,8);
+	cout<<mygame1.getCell(5,3)<<endl;
 
-
+	game<double> mygame2(10,10);
+	mygame2.setCell(5,3,8.1);
+	cout<<mygame2.getCell(5,3)<<endl;
 }
-
 
 
 
