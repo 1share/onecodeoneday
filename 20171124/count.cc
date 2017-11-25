@@ -2,7 +2,6 @@
 #include "count.h"
 #include "game.h"
 
-
 mycode::mycount::mycount():p(new int(1)) {}
 mycode::mycount::mycount(const mycode::mycount &mc):p(mc.p) {++*p;}
 mycode::mycount & mycode::mycount::operator=(const mycode::mycount &mc) {
@@ -55,7 +54,7 @@ smpt<T> &smpt<T>::operator=(const smpt<T> &sp) {
 }
 
 template<typename T>
-T &smpt<T>::get() {return point;}
+T *smpt<T>::get() {return point;}
 
 template<typename T>
 smpt<T>::~smpt() {
@@ -65,9 +64,9 @@ smpt<T>::~smpt() {
 
 
 int main() {
-  //	smpt<mycode::gameboard> mb(mycode::gameboard(10,10));
-  //	mb.get().setCell(6,6,8);
-  //	std::cout<<mb.get().getCell(6,6).getDoubleValue()<<endl;
+    	smpt<mycode::gameboard> mb(mycode::gameboard(10,10));
+      	mb.get()->setCell(6,6,8);
+      	std::cout<<mb.get()->getCell(6,6).getDoubleValue()<<endl;
 
 }
 

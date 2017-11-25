@@ -6,6 +6,7 @@
 namespace mycode {
 
 class mycount {
+public:
 	friend class smpt;
 	mycount();
 	mycount(const mycount &mc);	
@@ -13,6 +14,7 @@ class mycount {
 	bool onlyone();
 	bool mycopy(const mycount &mc);
 	~mycount();
+private:
 	int *p;
 };
 }
@@ -24,7 +26,7 @@ public:
 	smpt(const smpt<T> &sp);
 	smpt(const T &t);
 	smpt<T> &operator=(const smpt<T> &sp);
-	T &get();
+	T *get();
 	virtual ~smpt();
 	friend std::ostream &operator<<(std::ostream &out, const smpt<T> &sp) {return out<<sp.point;}
 private:
