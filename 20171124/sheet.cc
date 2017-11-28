@@ -1,5 +1,6 @@
 #include<iostream>
 #include<sstream>
+#include<ostream>
 #include "sheet.h"
 
 using namespace std;
@@ -70,6 +71,13 @@ cell &cell::operator+(const cell &data) {
 
 	return *this;
 }
+
+cell::cell(const cell &data) {
+	mvalue = data.mvalue;
+	mstr = data.mstr;
+}
+
+/* class sheet  */
 
 /* class sheet  */
 sheet::sheet(int w, int h):mw(w>default_width?default_width:w),mh(h>default_high?default_high:h) {

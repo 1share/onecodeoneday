@@ -1,4 +1,5 @@
 #include<string>
+#include<ostream>
 using namespace std;
 
 class cell {
@@ -11,6 +12,9 @@ class cell {
 
 		cell &operator=(const cell &data);
 		cell &operator+(const cell &data);
+		friend std::ostream &operator<<(std::ostream &os, const cell &data) {
+			return os<<data.mstr;
+		}
 
 		void setDoubleValue(const double v);
 		void setStringValue(const string s);

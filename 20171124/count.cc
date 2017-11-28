@@ -63,11 +63,26 @@ smpt<T>::~smpt() {
 	}
 }
 
+template<typename T>
+T smpt<T>::operator*() { return *point;  }
+
 
 int main() {
     	smpt<mycode::gameboard> mb(mycode::gameboard(10,10));
       	mb.get()->setCell(6,6,8);
-      	std::cout<<mb.get()->getCell(6,6).getDoubleValue()<<endl;
+      	std::cout<<mb.get()->getCell(6,6).getDoubleValue()<<std::endl;
+
+    	smpt<mycode::gameboard> mb2(mb);
+      	mb2.get()->setCell(6,6,9);
+      	std::cout<<mb2.get()->getCell(6,6).getDoubleValue()<<std::endl;
+
+	smpt<cell> n(cell("hello"));
+	std::cout<<n<<"|"<<(*n).getStringValue()<<"|"<<(*n)<<std::endl;
+
+	smpt<double> md(6.6);
+	std::cout<<md<<"|"<<*md<<std::endl;
+	
+	
 
 }
 

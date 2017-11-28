@@ -27,6 +27,7 @@ public:
 	smpt(const T &t);
 	smpt<T> &operator=(const smpt<T> &sp);
 	T *get();
+	T operator*();
 	virtual ~smpt();
 	friend std::ostream &operator<<(std::ostream &out, const smpt<T> &sp) {return out<<sp.point;}
 private:
