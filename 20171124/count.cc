@@ -58,8 +58,9 @@ T *smpt<T>::get() {return point;}
 
 template<typename T>
 smpt<T>::~smpt() {
-	if(mc.onlyone())
-		delete point;
+	if(mc.onlyone()) {
+	  	delete point;
+	}
 }
 
 

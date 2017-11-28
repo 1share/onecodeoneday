@@ -131,10 +131,10 @@ sheet &sheet::operator=(const sheet &data) {
 }
 
 void sheet::setCell(int x, int y, const cell &cell) {
-	cout<<"x:"<<x<<"y:"<<y<<endl;
-	cout<<"mw:"<<mw<<"mh:"<<mh<<endl;
+	//cout<<"x:"<<x<<"y:"<<y<<endl;
+	//cout<<"mw:"<<mw<<"mh:"<<mh<<endl;
 	if(!inRange(x, mw) || !inRange(y, mh)) {
-		cout<<"set param error"<<endl;
+	//	cout<<"set param error"<<endl;
 		return;
 	}
 
@@ -144,7 +144,7 @@ void sheet::setCell(int x, int y, const cell &cell) {
 cell &sheet::getCell(int x, int y) {
 	cell cell;
 	if(!inRange(x, mw) || !inRange(y, mh)) {
-		cout<<"get param error"<<endl;
+	//	cout<<"get param error"<<endl;
 		return mcell[0][0];
 	}
 

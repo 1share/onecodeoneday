@@ -9,6 +9,7 @@ namespace mycode {
 	class gameboard {
 		public:
 			gameboard(int w, int h);
+			gameboard(const gameboard &gb);
 			~gameboard();	
 			void setCell(int x, int y, const cell &data);
 			cell &getCell(int x, int y) const;

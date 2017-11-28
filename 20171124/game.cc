@@ -5,7 +5,11 @@ using namespace std;
 using namespace mycode;
 
 gameboard::gameboard(int w, int h):mw(w),mh(h) {
-	msheet = new sheet(mw,mh);
+	msheet = new sheet(w,h);
+}
+
+gameboard::gameboard(const gameboard &gb) {
+	msheet = new sheet(gb.mw,gb.mh);
 }
 
 gameboard::~gameboard() {
@@ -24,7 +28,7 @@ cell &gameboard::getCell(int x, int y) const{
 int main() {
 	gameboard gb(10,10);
 	gb.setCell(3,4,9);
-	cout<<gb.getCell(3,4)<<endl;
+	cout<<gb.getCell(3,4).getDoubleValue()<<endl;
 
 	return 0;
 }
