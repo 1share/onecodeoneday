@@ -26,11 +26,10 @@ bool mycode::mycount::onlyone() {
 
 bool mycode::mycount::makeonly() {
 	if(*p == 1)
-		return true;
-	else
-		*p = 1;
-
-	return false;
+		return false;
+	--*p;
+	p = new int(1);
+	return true;
 }
 
 bool mycode::mycount::mycopy(const mycode::mycount &mc) {
