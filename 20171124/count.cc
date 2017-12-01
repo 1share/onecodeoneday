@@ -76,6 +76,10 @@ int main() {
       	mb2.get()->setCell(6,6,9);
       	std::cout<<mb2.get()->getCell(6,6).getDoubleValue()<<std::endl;
 
+    	smpt<mycode::gameboard> mb3 = mb;
+      	mb3.get()->setCell(6,6,10);
+      	std::cout<<mb3.get()->getCell(6,6).getDoubleValue()<<std::endl;
+
 	smpt<cell> n(cell("hello"));
 	std::cout<<n<<"|"<<(*n).getStringValue()<<"|"<<(*n)<<std::endl;
 
