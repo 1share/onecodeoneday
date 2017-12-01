@@ -24,6 +24,15 @@ bool mycode::mycount::onlyone() {
 	return false;
 }
 
+bool mycode::mycount::makeonly() {
+	if(*p == 1)
+		return true;
+	else
+		*p = 1;
+
+	return false;
+}
+
 bool mycode::mycount::mycopy(const mycode::mycount &mc) {
 	++*mc.p;
 	if(--*p == 0){
@@ -57,8 +66,19 @@ template<typename T>
 T *smpt<T>::get() {return point;}
 
 template<typename T>
-smpt<T>::~smpt() {
+T *smpt<T>::set() 
+{
 	if(mc.onlyone()) {
+		point = new T(*(this->point));
+		return point;
+	}
+
+	return point;
+}
+
+template<typename T>
+smpt<T>::~smpt() {
+	if(mc.makeonly()) {
 	  	delete point;
 	}
 }
@@ -75,6 +95,10 @@ int main() {
   	mp2.get()->setx(3);
 	std::cout<<mp1.get()->x()<<std::endl;
 	std::cout<<mp2.get()->x()<<std::endl;
+  	mp2.set()->setx(10);
+	std::cout<<mp1.get()->x()<<std::endl;
+	std::cout<<mp2.get()->x()<<std::endl;
+
 
 }
 
