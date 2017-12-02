@@ -67,7 +67,7 @@ T *smpt<T>::get() {return point;}
 template<typename T>
 T *smpt<T>::set() 
 {
-	if(mc.onlyone()) {
+	if(mc.makeonly()) {
 		point = new T(*(this->point));
 		return point;
 	}
@@ -77,7 +77,7 @@ T *smpt<T>::set()
 
 template<typename T>
 smpt<T>::~smpt() {
-	if(mc.makeonly()) {
+	if(mc.onlyone()) {
 	  	delete point;
 	}
 }
@@ -89,14 +89,20 @@ T smpt<T>::operator*() { return *point;  }
 int main() {
 	smpt<point> mp1(point(6,8));
 	smpt<point> mp2(mp1);
+	smpt<point> mp3 = mp1;
 	std::cout<<mp1.get()->x()<<std::endl;
 	std::cout<<mp2.get()->x()<<std::endl;
+	std::cout<<mp3.get()->x()<<std::endl;
   	mp2.get()->setx(3);
+  	mp3.get()->setx(4);
 	std::cout<<mp1.get()->x()<<std::endl;
 	std::cout<<mp2.get()->x()<<std::endl;
+	std::cout<<mp3.get()->x()<<std::endl;
   	mp2.set()->setx(10);
+  	mp3.set()->setx(11);
 	std::cout<<mp1.get()->x()<<std::endl;
 	std::cout<<mp2.get()->x()<<std::endl;
+	std::cout<<mp3.get()->x()<<std::endl;
 
 
 }
