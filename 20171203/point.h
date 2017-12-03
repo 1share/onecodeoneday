@@ -26,13 +26,15 @@ public:
 	}
 	
 	void set(const T t) {
-		(*mp)[msize] = t;
+		(*mp)[msize-1] = t;
 	}
 	void set(const T t, int n) {
 		if(n<0 || n>msize)
 			throw "over range!!!";
 		(*mp)[n] = t;
 	}
+	
+	myarray<T> *getmp() {return mp;}
 
 
 private:
