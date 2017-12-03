@@ -70,6 +70,14 @@ int main() {
 	for(int i=0;i<10;i++) {
 		std::cout<<(*ma)[i]<<std::endl;
 	}
+	std::cout<<"---------------"<<std::endl;
+	ma->resize(20);
+	for(int i=0;i<20;i++) {
+		ma->insert(i,i);
+	}
+	for(int i=0;i<20;i++) {
+		std::cout<<(*ma)[i]<<std::endl;
+	}
 
 }
 
