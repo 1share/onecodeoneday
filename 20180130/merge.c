@@ -120,15 +120,21 @@ int main() {
 		return -1;
 	
 	init_list1(&list1, LIST_SIZE);
-	print_list(list1);
-
 	init_list2(&list2, LIST_SIZE);
+	print_list(list1);
 	print_list(list2);
 
-	//LIST *p = merge1(list1, list2);
-	//print_list(p);
+	LIST *p = merge2(list1, list2);
+	print_list(p);
 
-	LIST *q = merge2(list1, list2);
+	printf("--------------------------\n");
+
+	init_list1(&list1, LIST_SIZE);
+	init_list2(&list2, LIST_SIZE);
+	print_list(list1);
+	print_list(list2);
+
+	LIST *q = merge1(list1, list2);
 	print_list(q);
 }
 
