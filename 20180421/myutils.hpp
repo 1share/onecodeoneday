@@ -8,9 +8,11 @@ public:
 	my_al(int initC = 2);
 	~my_al();
 
+	int getMaxCount() const;
 	int getCount() const;
 	int appendValue(void *value);
 	const void *getValue(int index) const;
+	void *takeValue(int index);
 
 
 private:
@@ -22,4 +24,3 @@ private:
 
 };
 #endif
-
