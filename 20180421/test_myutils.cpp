@@ -15,6 +15,11 @@ void printValues(my_al &myal) {
 
 int main() {
 	class my_al myal(5);
+
+//	private	
+//	class my_al a(myal);
+//	class my_al b=a;
+
 	printValues(myal);
 
 	myal.appendValue(const_cast<char *>("abc"));
