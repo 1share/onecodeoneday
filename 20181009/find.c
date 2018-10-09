@@ -24,9 +24,11 @@ int myfind(int numbers[], int low, int high, int t){
 				high = mid - 1;
 		}
 
-		if (low > high)
-			return -1;
+		//if (low > high)
+		//	return -1;
 	}
+
+	return -1;
 }
 
 
@@ -38,8 +40,8 @@ int main(int argc, char **argv) {
 		exit(1);
 	}
 
-	//int numbers[] = {6,8,10,12,     14,     16,18,2,4};
-	int numbers[] = {16,18,2,4,   6,      8,10,12,14};
+	int numbers[] = {6,8,10,12,     14,     16,18,2,4};
+	//int numbers[] = {16,18,2,4,   6,      8,10,12,14};
 
 	printf("%d\n",myfind(numbers, 0, sizeof(numbers)/sizeof(int)-1,atoi(argv[1])));
 
